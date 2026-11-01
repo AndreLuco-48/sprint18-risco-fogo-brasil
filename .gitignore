@@ -1,0 +1,33 @@
+# Bases originais
+dados/originais/
+
+# Bancos de dados e arquivos geográficos volumosos
+*.db
+*.db-journal
+*.zip
+
+# Arquivos temporários do Jupyter
+.ipynb_checkpoints/
+
+# Arquivos temporários do Python
+__pycache__/
+*.pyc
+
+# Arquivos de ambiente
+.env
+.venv/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# Histórico e backups dos notebooks
+notebooks/Sprint18_Etapa1_EDA_Preparacao.ipynb
+notebooks/Sprint18_Etapa1_Entrega_backup.ipynb
+
+# Arquivos auxiliares gerados
+dados/auxiliares/
+
+# Arquivos temporários
+*.tmp
+*.bak
