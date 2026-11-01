@@ -252,3 +252,19 @@ iniciais e correções realizadas durante o projeto.
 
 A reprodutibilidade integral da versão de entrega
 ainda está sujeita à validação de execução.
+
+## 15. Estado da reprodutibilidade
+
+A leitura independente da base consolidada v2 foi validada,
+confirmando 19.206 observações, 45 colunas, ausência de
+duplicações município-dia e integridade da classificação.
+
+A execução integral do notebook de entrega, desde os dados
+originais em um ambiente limpo, ainda não foi validada.
+
+As bases originais e os arquivos auxiliares volumosos não
+estão incluídos neste repositório. Sua obtenção e organização
+são necessárias para reproduzir todas as etapas.
+
+A versão publicada representa o desenvolvimento da Etapa 1,
+com suas decisões metodológicas e limitações documentadas.
