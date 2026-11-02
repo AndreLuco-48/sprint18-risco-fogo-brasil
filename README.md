@@ -184,9 +184,9 @@ notebooks/Sprint18_Etapa1_Entrega.ipynb
 
 ## 13. Situação
 
-Etapa 1 — Preparação dos dados e análise exploratória.
+Etapas 1, 2 e 3 — Desenvolvimento analítico concluído.
 
-Projeto em desenvolvimento.
+Revisão de reprodutibilidade e submissão acadêmica pendentes.
 
 ## 14. Instruções de reprodução
 
@@ -371,3 +371,19 @@ representados na base de detecções.
 
 O modelo não constitui uma solução operacional
 validada de previsão da ocorrência de incêndios.
+
+## 20. Estado atual do projeto
+
+As três etapas analíticas previstas foram desenvolvidas:
+
+- Etapa 1: preparação, integração e análise exploratória.
+- Etapa 2: modelagem, avaliação e planejamento experimental.
+- Etapa 3: otimização, interpretabilidade e análise de vieses.
+
+Os notebooks revisados estão disponíveis no repositório.
+
+A reprodução integral do fluxo a partir dos dados originais
+ainda não foi comprovada em um ambiente independente.
+
+Os resultados devem ser interpretados considerando as
+limitações metodológicas documentadas.
