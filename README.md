@@ -268,3 +268,106 @@ são necessárias para reproduzir todas as etapas.
 
 A versão publicada representa o desenvolvimento da Etapa 1,
 com suas decisões metodológicas e limitações documentadas.
+
+## 16. Etapa 2 — Modelagem e avaliação
+
+Foram desenvolvidos três modelos de classificação:
+Regressão Logística, Árvore de Decisão e Random Forest.
+
+O DummyClassifier foi utilizado como referência.
+
+### Resultados na validação
+
+| Modelo | Acurácia | F1-macro | ROC AUC OvR |
+| --- | ---: | ---: | ---: |
+| Regressão Logística | 0,5051 | 0,4022 | 0,6238 |
+| Árvore de Decisão | 0,6020 | 0,4820 | 0,7119 |
+| Random Forest | 0,6795 | 0,5225 | 0,7679 |
+
+O Random Forest apresentou o melhor F1-macro na validação.
+
+### Avaliação no teste
+
+O Random Forest inicial apresentou:
+
+- Acurácia: 0,6363.
+- F1-macro: 0,4783.
+- Recall da categoria Alto: 0,5618.
+- ROC AUC OvR: 0,7061.
+
+O desempenho foi inferior ao observado na validação.
+
+### Análise econômica
+
+Foi realizada uma simulação financeira hipotética,
+com redução de 40,22% nas penalidades atribuídas
+aos erros do Random Forest em relação ao baseline.
+
+Os valores não representam economia real.
+
+Também foi elaborado um planejamento de teste A/B.
+Nenhum experimento operacional foi executado.
+
+## 17. Etapa 3 — Otimização e interpretabilidade
+
+### Otimização com Optuna
+
+Foram realizados 20 experimentos de otimização
+do Random Forest.
+
+O F1-macro de validação aumentou de 0,5225 para 0,5383.
+
+Melhores hiperparâmetros:
+
+- n_estimators: 75.
+- max_depth: 16.
+- min_samples_leaf: 5.
+- min_samples_split: 12.
+
+O ganho foi observado na validação, não constituindo
+comprovação independente de melhoria de generalização.
+
+### Interpretabilidade SHAP
+
+Os três atributos de maior importância global foram:
+
+1. area_classe_39: 0,0447.
+2. temperatura_media: 0,0418.
+3. area_classe_3: 0,0333.
+
+A análise identifica contribuições para as previsões
+do modelo, sem estabelecer relações causais.
+
+### Análise de vieses
+
+Foram investigadas diferenças de desempenho:
+
+- Entre faixas de distância até a estação meteorológica.
+- Entre grupos com diferentes disponibilidades de
+  informações meteorológicas.
+
+Foram observadas diferenças no F1-macro e no recall
+da categoria Alto.
+
+Os resultados são exploratórios e não constituem
+uma auditoria completa de equidade geográfica.
+
+## 18. Notebooks do projeto
+
+- notebooks/Sprint18_Etapa1_Entrega.ipynb
+- notebooks/Sprint18_Etapa2_Modelagem.ipynb
+- notebooks/Sprint18_Etapa3_Otimizacao_Interpretabilidade.ipynb
+
+## 19. Considerações finais
+
+O projeto desenvolveu um fluxo experimental de
+classificação multiclasse, incluindo preparação
+de dados, avaliação temporal, otimização,
+interpretabilidade e análise de diferenças
+de desempenho entre grupos.
+
+Os resultados permanecem restritos aos municípios-dia
+representados na base de detecções.
+
+O modelo não constitui uma solução operacional
+validada de previsão da ocorrência de incêndios.
