@@ -387,3 +387,42 @@ ainda não foi comprovada em um ambiente independente.
 
 Os resultados devem ser interpretados considerando as
 limitações metodológicas documentadas.
+
+## 21. Base consolidada para reprodução
+
+As Etapas 2 e 3 utilizam o arquivo:
+
+`dados/processados/base_consolidada_v2.csv`
+
+A base contém 19.206 observações município-dia e 45 colunas.
+
+O arquivo foi produzido durante a Etapa 1 a partir da
+integração de dados de queimadas, meteorologia e MapBiomas.
+
+### Reprodução das Etapas 2 e 3
+
+1. Obter o repositório do projeto.
+2. Manter a estrutura original de diretórios.
+3. Abrir os notebooks em um ambiente Jupyter com as
+   bibliotecas necessárias instaladas.
+4. Executar o notebook da Etapa 2.
+5. Executar o notebook da Etapa 3.
+
+Os notebooks utilizam o caminho relativo à pasta
+`Sprint18_Projeto_Final/dados/processados/`.
+
+A base consolidada permite executar as análises das
+Etapas 2 e 3 sem repetir o processamento dos
+arquivos originais.
+
+### Limitações
+
+A base foi construída com municípios-dia associados
+a focos detectados.
+
+Sua utilização não permite concluir que o modelo
+prevê a ocorrência de incêndios em todos os
+municípios brasileiros.
+
+A reprodução integral da Etapa 1 exige os arquivos
+originais, que não estão incluídos no repositório.
