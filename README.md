@@ -299,11 +299,7 @@ O desempenho foi inferior ao observado na validação.
 
 ### Análise econômica
 
-Foi realizada uma simulação financeira hipotética,
-com redução de 40,22% nas penalidades atribuídas
-aos erros do Random Forest em relação ao baseline.
-
-Os valores não representam economia real.
+Foi realizada uma simulação financeira hipotética, na qual o Random Forest apresentou penalidades de R$ 3.497.000,00, contra R$ 8.568.000,00 do baseline. Isso representa uma redução de R$ 5.071.000,00 (59,19%). Os valores são ilustrativos e não representam economia financeira real.
 
 Também foi elaborado um planejamento de teste A/B.
 Nenhum experimento operacional foi executado.
