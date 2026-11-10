@@ -40,6 +40,20 @@ Foram utilizadas quatro bases disponibilizadas para o projeto:
 Como referência espacial complementar, foi utilizada a
 Malha Municipal Digital de 2024 do IBGE.
 
+### Referências para obtenção dos dados
+
+As bases originais não foram incluídas no repositório GitHub devido ao volume dos arquivos. Para consultar as fontes públicas e obter os dados correspondentes, estão disponíveis os seguintes portais:
+
+- **Queimadas — INPE:** [Programa Queimadas — Dados Abertos](https://data.inpe.br/queimadas/dados-abertos/). Disponibiliza registros históricos de focos de queimadas, incluindo arquivos CSV.
+- **BDMEP-2025 — INMET:** [Dados Meteorológicos Históricos](https://portal.inmet.gov.br/dadoshistoricos). Disponibiliza arquivos históricos de medições meteorológicas.
+- **BDMEP-estação — INMET:** [Banco de Dados Meteorológicos](https://bdmep.inmet.gov.br/). Portal de consulta de séries históricas das estações meteorológicas.
+- **MapBiomas:** [Cobertura e Uso da Terra](https://brasil.mapbiomas.org/iniciativas-e-produtos/cobertura-e-uso-da-terra/cobertura-30m/cobertura/). Disponibiliza acesso a mapas e estatísticas territoriais.
+- **IBGE:** [Malhas Municipais Digitais](https://www.ibge.gov.br/geociencias/organizacao-do-territorio/malhas-territoriais/15774-malhas.html). Referência para os limites municipais utilizados na associação espacial.
+
+Os endereços apresentados são referências oficiais de acesso às fontes, não links diretos para os quatro arquivos originais utilizados. A reprodução integral da preparação depende da seleção dos arquivos, períodos e critérios descritos nos notebooks.
+
+A base consolidada utilizada na modelagem está disponível em `dados/processados/base_consolidada_v2.csv`.
+
 ## 4. Preparação e integração
 
 As bases foram investigadas quanto a estrutura, duplicações,
@@ -192,7 +206,7 @@ Revisão de reprodutibilidade e submissão acadêmica pendentes.
 
 ### Ambiente utilizado
 
-- Python 3.13
+- Python 3.13.9
 - JupyterLab
 - pandas
 - NumPy
@@ -201,6 +215,19 @@ Revisão de reprodutibilidade e submissão acadêmica pendentes.
 - scikit-learn
 - GeoPandas
 - statsmodels
+
+### Instalação das dependências
+
+As dependências do projeto estão registradas no arquivo
+`requirements.txt`, localizado na raiz do repositório.
+
+Para instalá-las, execute o comando abaixo no terminal,
+a partir da pasta principal do projeto:
+
+    python -m pip install -r requirements.txt
+
+As versões das bibliotecas foram registradas a partir
+do ambiente utilizado no desenvolvimento.
 
 ### Preparação dos dados
 
@@ -347,6 +374,30 @@ da categoria Alto.
 
 Os resultados são exploratórios e não constituem
 uma auditoria completa de equidade geográfica.
+
+### Resultados complementares após a revisão
+
+O Random Forest otimizado foi avaliado no conjunto de teste,
+utilizando os hiperparâmetros selecionados na validação.
+
+O modelo apresentou F1-macro de 0,4771, comparado a 0,4783
+do Random Forest original. Embora a acurácia tenha aumentado
+de 0,6363 para 0,6514, não houve melhoria na métrica principal.
+
+A interpretação SHAP identificou como atributos mais relevantes
+as classes territoriais 39 (Soja) e 3 (Formação Florestal),
+além da temperatura média. As denominações territoriais foram
+baseadas na legenda oficial de referência do MapBiomas.
+
+A avaliação regional identificou diferenças no desempenho do
+classificador. O recall da categoria Alto variou de 0,7240
+no Nordeste a 0,0769 no Sudeste.
+
+O Sudeste apresentou apenas 13 casos reais de risco Alto
+na validação, exigindo cautela na interpretação dessa métrica.
+
+Os resultados não permitem estabelecer relações causais
+ou afirmar superioridade do modelo otimizado no conjunto de teste.
 
 ## 18. Notebooks do projeto
 
